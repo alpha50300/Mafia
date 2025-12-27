@@ -4,11 +4,7 @@ import path from "path";
 
 export default defineConfig({
   base: "/Mafia/",
-
-  plugins: [
-    react(),
-  ],
-
+  plugins: [react()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
