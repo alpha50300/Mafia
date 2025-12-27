@@ -3,15 +3,17 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 
 export default defineConfig(({ mode }) => ({
-  base: "./", // ⭐ هذا السطر هو الحل
+ 
+  base: "/Mafia/",
 
   plugins: [
     react(),
+
     mode === "development"
       ? {
           name: "inject-chef-dev",
           transform(code, id) {
-            if (id.includes("main.tsx")) {
+            if (id.includes("main.tsx") || id.includes("main.jsx")) {
               return {
                 code: `${code}
 
